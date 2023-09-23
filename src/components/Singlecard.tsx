@@ -4,14 +4,15 @@ import { Card } from "react-bootstrap"
 import { Cardtype } from "../types/card";
 
 type Cardprops = {
-   card: Cardtype
+   card: Cardtype,
+   clickhandler: (card: Cardtype) => void
 }
 
 
-export const Singlecard = ({card}:Cardprops): JSX.Element => {
+export const Singlecard = ({card, clickhandler }:Cardprops): JSX.Element => {
 
     useEffect(() => {
-        console.log('Card', card);
+       // console.log('Card', card);
     },[card])
 
     if(!card) {
@@ -19,7 +20,7 @@ export const Singlecard = ({card}:Cardprops): JSX.Element => {
     }
 
     return (   
-       <div className="singlecard shadow-lg"> 
+       <div className="singlecard shadow-lg" onClick={ (e) => clickhandler(card) }> 
         <div className="turnaround">   
             <div className="front">
                 <Card className="card cardfront">

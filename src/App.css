@@ -1,4 +1,9 @@
 
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
 /** Card **/
 .cardback .card-body{
   background-color: rgba(0,0,0,.2);
@@ -10,7 +15,7 @@
 
 .singlecard {
   width: 300px;
-  height: auto;
+height: 200px;
   margin: 10px;
  
   border-radius: 5px;
@@ -18,6 +23,7 @@
   font-size: 50px;
   color: white;
   cursor: pointer;
+
 }
 
 .turnaround:hover { 
@@ -32,6 +38,10 @@
 
 }
 
+.card {
+  height: auto;
+  min-height: 200px;
+}
 .turnaround {
   transition: .5s /* Die Drehung soll 0,5 Sekunden dauern */;
   transform-style: preserve-3d; /* Kind-Elemente  (.front + .back) sollen ihre 3D-Eigenschaften behalten*/
@@ -52,4 +62,9 @@
 .back {
   transform: rotateY(180deg) /* Die Rückseite des Logos wird umgedreht, um dann bei der Drehung der gesamten Szene vorne zu sein :) */;
   z-index: 1;
+}
+
+.stack {
+  width: 100%;
+  display: flex;
 }
